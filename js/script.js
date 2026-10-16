@@ -55,10 +55,7 @@ const LISTS={
  jar:{el:'#l-jar',blank:()=>({t:'A new love note'}),tpl:linesTpl},
  env:{el:'#l-env',blank:()=>({label:'Open when…',text:'Write the letter.'}),cls:()=>'env',
    tpl:it=>`<div class="env-head" role="button" tabindex="0" aria-expanded="false" data-env data-f="label">${esc(it.label)}</div><div class="env-letter"><div><p data-f="text">${esc(it.text)}</p></div></div>`},
- gloss:{el:'#l-gloss',blank:()=>({term:'New term',def:'What it means.'}),cls:()=>'gl',
-   tpl:it=>`<b data-f="term">${esc(it.term)}</b><span class="d" data-f="def">${esc(it.def)}</span>`},
- songs:{el:'#l-songs',blank:()=>({title:'A song',note:'Why it is ours.'}),cls:()=>'song',
-   tpl:it=>`<div><b data-f="title">${esc(it.title)}</b><span class="d" data-f="note">${esc(it.note)}</span></div>`}
+
 };
 const list=n=>state.lists[n]||DEF[n];
 const mutable=n=>state.lists[n]||(state.lists[n]=JSON.parse(JSON.stringify(DEF[n])));
