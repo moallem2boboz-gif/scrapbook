@@ -1,0 +1,258 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>For you, in blue</title>
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;600&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=Pinyon+Script&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/shared.css">
+<link id="css-rose" rel="stylesheet" href="css/rose.css" media="not all">
+<link id="css-night" rel="stylesheet" href="css/night.css" media="all">
+
+<script>try{var t=localStorage.getItem('scrapbook-theme');if(t==='rose'){document.getElementById('css-rose').media='all';document.getElementById('css-night').media='not all'}}catch(e){}</script>
+</head>
+<body data-page="0">
+<div id="chooser" role="dialog" aria-modal="true" aria-labelledby="chTitle">
+  <div class="ch-in">
+    <h1 id="chTitle">Choose a theme</h1>
+    <p class="ch-sub">You can switch any time from the top.</p>
+    <div class="ch-cards">
+      <button type="button" class="ch-card ch-night" data-theme="night"><span class="ch-art"><svg viewBox="0 0 120 120" aria-hidden="true"><circle cx="60" cy="62" r="46" style="fill:none;stroke:rgba(184,198,227,.55);stroke-width:1.6"/><circle cx="60" cy="62" r="40" style="fill:none;stroke:rgba(184,198,227,.3);stroke-width:1"/><path d="M60 62L60 30" style="stroke:#DCE6F5;stroke-width:2;stroke-linecap:round"/><path d="M60 62L43 51" style="stroke:#DCE6F5;stroke-width:3;stroke-linecap:round"/><circle cx="60" cy="62" r="3" style="fill:#DCE6F5"/><path d="M96 16Q96 25 105 25Q96 25 96 34Q96 25 87 25Q96 25 96 16Z" style="fill:#F3E9CF"/><path d="M22 26Q22 31 27 31Q22 31 22 36Q22 31 17 31Q22 31 22 26Z" style="fill:#F3E9CF"/><circle cx="104" cy="92" r="1.6" style="fill:#fff"/><circle cx="16" cy="96" r="1.4" style="fill:#fff"/><circle cx="30" cy="12" r="1.2" style="fill:#fff"/><circle cx="108" cy="58" r="1.2" style="fill:#fff"/></svg></span><b>Laufey theme</b><i>Midnight blue, jazz and stars</i></button>
+      <button type="button" class="ch-card ch-rose" data-theme="rose"><span class="ch-art"><svg viewBox="0 0 120 120" aria-hidden="true"><path d="M60 94C30 72 19 55 27 41C35 28 52 31 60 43C68 31 85 28 93 41C101 55 90 72 60 94Z" style="fill:#E2637F"/><path d="M60 94C30 72 19 55 27 41C35 28 52 31 60 43" style="fill:none;stroke:rgba(255,255,255,.35);stroke-width:2"/><ellipse cx="22" cy="20" rx="6" ry="4" transform="rotate(30 22 20)" style="fill:#F2B8C4"/><ellipse cx="100" cy="24" rx="6" ry="4" transform="rotate(-30 100 24)" style="fill:#E8A0AB"/><ellipse cx="16" cy="92" rx="6" ry="4" transform="rotate(-20 16 92)" style="fill:#E8A0AB"/><ellipse cx="104" cy="98" rx="6" ry="4" transform="rotate(25 104 98)" style="fill:#F2B8C4"/></svg></span><b>Rose theme</b><i>Warm, romantic and classic</i></button>
+    </div>
+  </div>
+</div>
+
+<div class="bokeh" id="bokeh" aria-hidden="true"></div>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+  <symbol id="star" viewBox="0 0 24 24"><path d="M12 1C12.8 8 16 11.2 23 12C16 12.8 12.8 16 12 23C11.2 16 8 12.8 1 12C8 11.2 11.2 8 12 1Z" fill="currentColor"/></symbol>
+  <symbol id="heart" viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" fill="currentColor"/></symbol>
+  <linearGradient id="hg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#E8708A"/><stop offset="1" stop-color="#A2253F"/></linearGradient>
+  <filter id="glow" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="3"/></filter>
+</defs></svg>
+
+<div class="wrap">
+  <div class="top">
+    <span class="brand">our story</span>
+    <span class="top-r"><button id="themeBtn" type="button">Rose look</button><button id="musicBtn" type="button" aria-pressed="true">&#9834; Music on</button><button id="editBtn" type="button">Edit</button></span>
+  </div>
+
+  <main class="sheet is-cover" id="sheet">
+    <i class="corner tr"></i><i class="corner bl"></i>
+
+    <!-- 0 · COVER -->
+    <section class="page on" id="p0" data-title="Cover">
+      <svg class="bgclock" viewBox="-250 -250 500 500" aria-hidden="true"><g fill="none" stroke="#B8C6E3"><circle r="238" stroke-width="2.4"/><circle r="228" stroke-width="1"/><line x1="0.0" y1="-206.0" x2="0.0" y2="-222.0" stroke-width="2.2"/><line x1="22.4" y1="-212.8" x2="23.2" y2="-220.8" stroke-width="1"/><line x1="44.5" y1="-209.3" x2="46.2" y2="-217.1" stroke-width="1"/><line x1="66.1" y1="-203.5" x2="68.6" y2="-211.1" stroke-width="1"/><line x1="87.0" y1="-195.5" x2="90.3" y2="-202.8" stroke-width="1"/><line x1="103.0" y1="-178.4" x2="111.0" y2="-192.3" stroke-width="2.2"/><line x1="125.8" y1="-173.1" x2="130.5" y2="-179.6" stroke-width="1"/><line x1="143.2" y1="-159.0" x2="148.5" y2="-165.0" stroke-width="1"/><line x1="159.0" y1="-143.2" x2="165.0" y2="-148.5" stroke-width="1"/><line x1="173.1" y1="-125.8" x2="179.6" y2="-130.5" stroke-width="1"/><line x1="178.4" y1="-103.0" x2="192.3" y2="-111.0" stroke-width="2.2"/><line x1="195.5" y1="-87.0" x2="202.8" y2="-90.3" stroke-width="1"/><line x1="203.5" y1="-66.1" x2="211.1" y2="-68.6" stroke-width="1"/><line x1="209.3" y1="-44.5" x2="217.1" y2="-46.2" stroke-width="1"/><line x1="212.8" y1="-22.4" x2="220.8" y2="-23.2" stroke-width="1"/><line x1="206.0" y1="-0.0" x2="222.0" y2="-0.0" stroke-width="2.2"/><line x1="212.8" y1="22.4" x2="220.8" y2="23.2" stroke-width="1"/><line x1="209.3" y1="44.5" x2="217.1" y2="46.2" stroke-width="1"/><line x1="203.5" y1="66.1" x2="211.1" y2="68.6" stroke-width="1"/><line x1="195.5" y1="87.0" x2="202.8" y2="90.3" stroke-width="1"/><line x1="178.4" y1="103.0" x2="192.3" y2="111.0" stroke-width="2.2"/><line x1="173.1" y1="125.8" x2="179.6" y2="130.5" stroke-width="1"/><line x1="159.0" y1="143.2" x2="165.0" y2="148.5" stroke-width="1"/><line x1="143.2" y1="159.0" x2="148.5" y2="165.0" stroke-width="1"/><line x1="125.8" y1="173.1" x2="130.5" y2="179.6" stroke-width="1"/><line x1="103.0" y1="178.4" x2="111.0" y2="192.3" stroke-width="2.2"/><line x1="87.0" y1="195.5" x2="90.3" y2="202.8" stroke-width="1"/><line x1="66.1" y1="203.5" x2="68.6" y2="211.1" stroke-width="1"/><line x1="44.5" y1="209.3" x2="46.2" y2="217.1" stroke-width="1"/><line x1="22.4" y1="212.8" x2="23.2" y2="220.8" stroke-width="1"/><line x1="0.0" y1="206.0" x2="0.0" y2="222.0" stroke-width="2.2"/><line x1="-22.4" y1="212.8" x2="-23.2" y2="220.8" stroke-width="1"/><line x1="-44.5" y1="209.3" x2="-46.2" y2="217.1" stroke-width="1"/><line x1="-66.1" y1="203.5" x2="-68.6" y2="211.1" stroke-width="1"/><line x1="-87.0" y1="195.5" x2="-90.3" y2="202.8" stroke-width="1"/><line x1="-103.0" y1="178.4" x2="-111.0" y2="192.3" stroke-width="2.2"/><line x1="-125.8" y1="173.1" x2="-130.5" y2="179.6" stroke-width="1"/><line x1="-143.2" y1="159.0" x2="-148.5" y2="165.0" stroke-width="1"/><line x1="-159.0" y1="143.2" x2="-165.0" y2="148.5" stroke-width="1"/><line x1="-173.1" y1="125.8" x2="-179.6" y2="130.5" stroke-width="1"/><line x1="-178.4" y1="103.0" x2="-192.3" y2="111.0" stroke-width="2.2"/><line x1="-195.5" y1="87.0" x2="-202.8" y2="90.3" stroke-width="1"/><line x1="-203.5" y1="66.1" x2="-211.1" y2="68.6" stroke-width="1"/><line x1="-209.3" y1="44.5" x2="-217.1" y2="46.2" stroke-width="1"/><line x1="-212.8" y1="22.4" x2="-220.8" y2="23.2" stroke-width="1"/><line x1="-206.0" y1="0.0" x2="-222.0" y2="0.0" stroke-width="2.2"/><line x1="-212.8" y1="-22.4" x2="-220.8" y2="-23.2" stroke-width="1"/><line x1="-209.3" y1="-44.5" x2="-217.1" y2="-46.2" stroke-width="1"/><line x1="-203.5" y1="-66.1" x2="-211.1" y2="-68.6" stroke-width="1"/><line x1="-195.5" y1="-87.0" x2="-202.8" y2="-90.3" stroke-width="1"/><line x1="-178.4" y1="-103.0" x2="-192.3" y2="-111.0" stroke-width="2.2"/><line x1="-173.1" y1="-125.8" x2="-179.6" y2="-130.5" stroke-width="1"/><line x1="-159.0" y1="-143.2" x2="-165.0" y2="-148.5" stroke-width="1"/><line x1="-143.2" y1="-159.0" x2="-148.5" y2="-165.0" stroke-width="1"/><line x1="-125.8" y1="-173.1" x2="-130.5" y2="-179.6" stroke-width="1"/><line x1="-103.0" y1="-178.4" x2="-111.0" y2="-192.3" stroke-width="2.2"/><line x1="-87.0" y1="-195.5" x2="-90.3" y2="-202.8" stroke-width="1"/><line x1="-66.1" y1="-203.5" x2="-68.6" y2="-211.1" stroke-width="1"/><line x1="-44.5" y1="-209.3" x2="-46.2" y2="-217.1" stroke-width="1"/><line x1="-22.4" y1="-212.8" x2="-23.2" y2="-220.8" stroke-width="1"/><path d="M0 0 L0 -160" stroke-width="3" stroke-linecap="round"/><path d="M0 0 L-58 -96" stroke-width="5" stroke-linecap="round"/></g><g fill="#B8C6E3" font-family="Cormorant Garamond,Georgia,serif" font-size="46" text-anchor="middle" dominant-baseline="central"><text x="91.0" y="-157.6">1</text><text x="157.6" y="-91.0">2</text><text x="182.0" y="-0.0">3</text><text x="157.6" y="91.0">4</text><text x="91.0" y="157.6">5</text><text x="0.0" y="182.0">6</text><text x="-91.0" y="157.6">7</text><text x="-157.6" y="91.0">8</text><text x="-182.0" y="0.0">9</text><text x="-157.6" y="-91.0">10</text><text x="-91.0" y="-157.6">11</text><text x="-0.0" y="-182.0">12</text></g><circle r="7" fill="#B8C6E3"/></svg>
+      <div class="cover-in">
+        <div class="cv-top" data-k="cvTop">For my love</div>
+        <p class="cv-sub" data-k="cvSub">A little world made of us</p>
+        <div class="envelope" id="envelope">
+          <div class="env-back"></div>
+          <div class="flap"></div>
+          <div class="env-card"><div><span class="ec-s">a scrapbook of us</span><svg aria-hidden="true"><use href="#heart"/></svg><span class="ec-n" data-k="for">For you</span></div></div>
+          <div class="env-front"></div>
+          <button class="seal" id="seal" type="button" aria-label="Break the seal and open"><svg class="seal-heart" aria-hidden="true"><use href="#heart"/></svg><svg class="seal-star" aria-hidden="true"><use href="#star"/></svg></button>
+        </div>
+        <p class="hint" id="hint">Tap the seal</p>
+        <button class="open-btn" id="open" type="button">Come in</button>
+        <button class="cover-heart" id="leaf" type="button" aria-label="Decoration"><svg aria-hidden="true"><use href="#heart"/></svg></button>
+      </div>
+    </section>
+
+    <!-- 1 · LETTER -->
+    <section class="page" id="p1" data-title="Letter">
+      <h2>A letter for you</h2>
+      <p class="sub">Read it slowly.</p>
+      <article class="letter">
+        <div class="salute" data-k="salute">My love,</div>
+        <div class="lbody" data-k="letter"></div>
+        <div class="lclose" data-k="lclose">Forever yours,</div>
+        <div class="sig" data-k="sig">Christ</div>
+        <div class="mini-seal" aria-hidden="true"><svg><use href="#heart"/></svg></div>
+      </article>
+    </section>
+
+    <!-- 2 · MEMORIES -->
+    <section class="page" id="p2" data-title="Memories">
+      <h2>Our little memories</h2>
+      <p class="sub">Strung up like lights, so I can look at them whenever I want.</p>
+      <svg class="lights" id="lights" viewBox="0 0 1000 64" aria-hidden="true"><path id="lp" d="M0 8 Q125 60 250 14 T500 14 T750 14 T1000 10" fill="none" stroke="#C99863" stroke-width="2"/></svg>
+      <div class="grid" id="l-memories"></div>
+      <button class="add" data-add="memories" type="button">+ Add a memory</button>
+    </section>
+
+    <!-- 3 · CHATS -->
+    <section class="page" id="p3" data-title="Chats">
+      <h2>Words I keep</h2>
+      <p class="sub">The conversations I'd never delete.</p>
+      <div class="shots">
+        <div class="shots-stage" id="shotStage">
+          <img id="shotImg" alt="A screenshot of one of our chats">
+          <button class="car-btn prev" id="shotPrev" type="button" aria-label="Previous chat">&#8249;</button>
+          <button class="car-btn next" id="shotNext" type="button" aria-label="Next chat">&#8250;</button>
+        </div>
+        <p class="shots-count" id="shotCount"></p>
+        <p class="shots-hint">Tap the arrows or swipe. Tap a chat to see it bigger.</p>
+      </div>
+      <div class="phone" id="l-chat"></div>
+      <div style="text-align:center">
+        <button class="add" data-add="chat" data-who="her" type="button">+ Her message</button>
+        <button class="add" data-add="chat" data-who="me" type="button">+ My message</button>
+      </div>
+    </section>
+
+    <!-- 4 · ADORE -->
+    <section class="page" id="p4" data-title="Adore">
+      <h2>Everything I adore</h2>
+      <p class="sub">A few of the reasons, and I could keep going.</p>
+      <div class="reasons" id="l-reasons"></div>
+      <button class="add" data-add="reasons" type="button">+ Add a reason</button>
+      <div class="cards">
+        <div class="index"><h3 data-k="c1">What I am grateful for</h3><div class="lines" id="l-says"></div><button class="add" data-add="says" type="button">+ Add</button></div>
+        <div class="index"><h3 data-k="c2">My promises to you</h3><div class="lines" id="l-habits"></div><button class="add" data-add="habits" type="button">+ Add</button></div>
+        <div class="index"><h3 data-k="c3">What I love about us</h3><div class="lines" id="l-favs"></div><button class="add" data-add="favs" type="button">+ Add</button></div>
+      </div>
+    </section>
+
+    <!-- 5 · TWO SKIES -->
+    <section class="page" id="p5" data-title="Two skies">
+      <h2>Two skies, one moon</h2>
+      <p class="sub">Lebanon and Australia, under the same moon.</p>
+      <div class="sky">
+        <svg class="sky-svg" viewBox="0 0 800 300" role="img" aria-label="Two glowing stars, Lebanon and Australia, joined by a glowing line under the moon">
+          <g id="stars"></g>
+          <path id="rp" d="M110 214 Q400 -30 690 214" fill="none" stroke="#EBD3B0" stroke-opacity=".7" stroke-width="2" stroke-dasharray="2 9" stroke-linecap="round"/>
+          <g id="moon" transform="translate(400 70)"></g>
+          <g><circle cx="110" cy="214" r="16" fill="#FFD9A0" filter="url(#glow)"/><circle cx="110" cy="214" r="6" fill="#FFF3DC"/></g>
+          <g><circle cx="690" cy="214" r="16" fill="#FFB6C1" filter="url(#glow)"/><circle cx="690" cy="214" r="6" fill="#FFF3DC"/></g>
+          <text x="110" y="268" text-anchor="middle">Lebanon</text><text x="690" y="268" text-anchor="middle">Australia</text>
+          <g id="dot"><circle r="4" fill="#FFF3DC"/><circle r="9" fill="#FFB6C1" opacity=".5" filter="url(#glow)"/><animateMotion dur="9s" repeatCount="indefinite"><mpath href="#rp"/></animateMotion></g>
+        </svg>
+        <p class="moon-t">Tonight we're sharing the same moon.</p>
+        <p class="moon-n" id="moonN"></p>
+        <div class="clocks" aria-live="off">
+          <div class="clock"><div class="w" id="lbW"></div><div class="t" id="lbT"></div><div class="c">Lebanon</div></div>
+          <div class="diff" id="diff"></div>
+          <div class="clock"><div class="w" id="auW"></div><div class="t" id="auT"></div><div class="c" id="auC">Australia</div><select id="auCity" aria-label="Her city"></select></div>
+        </div>
+      </div>
+
+      <div class="postcards">
+        <div class="post"><div class="stamp">LB</div>
+          <div class="photo wide" data-p="place-lb" data-src="images/places/place-lebanon.jpg"></div>
+          <h3>Lebanon</h3>
+          <p data-k="lb">There is so much to do here, and everything is close to everything else, because it is such a small country. The mountains are breathtaking and the weather is amazing. I would love for you to see it one day.</p></div>
+        <div class="post"><div class="stamp">AU</div>
+          <div class="photo wide" data-p="place-au" data-src="images/places/place-australia.jpg"></div>
+          <h3>Australia</h3>
+          <p data-k="au">This is where you are: a harbour city on the other side of the world. I have only seen it through your pictures and our calls, but I already love it, because it is yours.</p></div>
+      </div>
+      <div class="two">
+        <div class="note"><h3>How we met</h3><p data-k="met">We met on a Discord server in October 2023. I always thought you were a really fun and sweet person to be around. In early December we had our first really long conversation, and one week after that I knew — I really loved talking to you. There is nobody like you. And on January 4, we became us. Best day of my life.</p></div>
+        <div class="note"><h3>Ordinary moments, far apart</h3><div class="lines" id="l-ordinary"></div><button class="add" data-add="ordinary" type="button">+ Add</button></div>
+      </div>
+    </section>
+
+    <!-- 6 · TIMELINE -->
+    <section class="page" id="p6" data-title="Timeline">
+      <h2>The story of us</h2>
+      <p class="sub">Every date I'd happily live again.</p>
+      <div class="tl" id="l-timeline"></div>
+      <button class="add" data-add="timeline" type="button">+ Add a date</button>
+    </section>
+
+    <!-- 7 · SOMEDAY -->
+    <section class="page" id="p7" data-title="Someday">
+      <h2>Until I see you</h2>
+      <p class="sub" data-k="cdSub">Every second brings us closer.</p>
+      <div class="count empty" id="count">
+        <div class="cd"><b id="cdD">0</b><span>days</span></div>
+        <div class="cd"><b id="cdH">0</b><span>hours</span></div>
+        <div class="cd"><b id="cdM">0</b><span>minutes</span></div>
+        <div class="cd"><b id="cdS">0</b><span>seconds</span></div>
+      </div>
+      <label class="datepick">The day we meet: <input type="date" id="target"></label>
+      <p class="cmsg" id="cmsg" data-k="cmsg">The day I finally hold you is on its way.</p>
+      <div class="wishes" id="l-someday"></div>
+      <div style="text-align:center"><button class="add" data-add="someday" type="button">+ Add a someday</button></div>
+      <div class="daycard">
+        <h3 class="day-t" data-k="dayT">A very ordinary day, together</h3>
+        <p class="day-s" data-k="dayS">Nothing special, and somehow everything.</p>
+        <div class="day-edge" data-k="dayA">Good morning</div>
+        <div class="day-list" id="l-day"></div>
+        <div class="day-edge" data-k="dayB">Good night</div>
+        <div style="text-align:center"><button class="add" data-add="day" type="button">+ Add a moment</button></div>
+      </div>
+    </section>
+
+    <!-- 8 · NOTES JAR -->
+    <section class="page" id="p8" data-title="Love notes">
+      <h2>A jar of love notes</h2>
+      <p class="sub">Pull one out whenever you need it.</p>
+      <div class="jar-stage">
+        <svg class="jar" viewBox="0 0 200 250" aria-hidden="true">
+          <rect x="62" y="8" width="76" height="22" rx="5" fill="#C99863"/>
+          <path d="M54 34h92c8 0 14 6 14 14v170c0 14-10 24-24 24H64c-14 0-24-10-24-24V48c0-8 6-14 14-14z" fill="#F6DAD6" fill-opacity=".55" stroke="#C99863" stroke-width="3"/>
+          <g stroke="#E3C7B9" stroke-width="1"><rect x="62" y="150" width="52" height="30" fill="#fff" transform="rotate(-14 88 165)"/><rect x="92" y="176" width="54" height="30" fill="#FBF1E8" transform="rotate(10 119 191)"/><rect x="58" y="188" width="50" height="30" fill="#fff" transform="rotate(6 83 203)"/><rect x="100" y="140" width="48" height="28" fill="#F7E4DC" transform="rotate(-6 124 154)"/><rect x="74" y="120" width="46" height="28" fill="#fff" transform="rotate(18 97 134)"/></g>
+          <g fill="#C2415F"><use href="#heart" x="72" y="104" width="22" height="22"/><use href="#heart" x="108" y="118" width="16" height="16"/><use href="#heart" x="64" y="196" width="14" height="14"/><use href="#heart" x="118" y="196" width="12" height="12"/></g>
+          <path d="M52 56v150" stroke="#fff" stroke-opacity=".6" stroke-width="5" stroke-linecap="round"/>
+        </svg>
+        <div>
+          <button class="pull" id="pull" type="button">Pull a love note</button>
+          <div class="slip" id="slip" aria-live="polite">Tap the button and I'll tell you something.</div>
+        </div>
+      </div>
+      <div class="jar-list" id="l-jar"></div>
+      <button class="add" data-add="jar" type="button">+ Add a note</button>
+    </section>
+
+    <!-- 9 · EXTRAS -->
+    <section class="page" id="p9" data-title="Extras">
+      <h2>Little keepsakes</h2>
+      <p class="sub">Small things, saved for you.</p>
+      <div class="cols">
+        <div><h3>Open when…</h3><div id="l-env"></div><button class="add" data-add="env" type="button">+ Add a letter</button></div>
+        
+      </div>
+    </section>
+
+    <!-- 10 · QUIZ -->
+    <section class="page" id="pq" data-title="Quiz">
+      <h2>How well do you know us?</h2>
+      <p class="sub">A little quiz, just for fun. No pressure.</p>
+      <div id="quizPlay" aria-live="polite"></div>
+      <div class="quiz-edit">
+        <p class="qhint">Edit the questions and answers. Tap the circle with the check to mark the right answer.</p>
+        <div id="l-quiz"></div>
+        <button class="add" data-add="quiz" type="button">+ Add a question</button>
+      </div>
+    </section>
+
+    <!-- 11 · FOREVER -->
+    <section class="page" id="p10" data-title="Forever">
+      <div class="end">
+        <svg class="bigheart" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" fill="url(#hg)"/></svg>
+        <h2 data-k="endT">Forever yours.</h2>
+        <p class="body" data-k="endB">However many miles are between us, my heart only ever points one way. Toward you.</p>
+        <div class="sign" data-k="endS">I love you.</div>
+        <button class="love-btn" id="love" type="button">Send a little love</button>
+      </div>
+    </section>
+  </main>
+
+  <nav class="nav" aria-label="Pages">
+    <button class="arrow" id="prev" type="button" aria-label="Previous page">&larr;</button>
+    <div class="chips" id="chips"></div>
+    <button class="arrow" id="next" type="button" aria-label="Next page">&rarr;</button>
+  </nav>
+</div>
+
+<input type="file" id="file" accept="image/*" hidden>
+<div id="lb" role="dialog" aria-label="Photo"><img alt=""></div>
+<div id="toast" role="status"></div>
+<div id="veil" aria-hidden="true"></div>
+
+<script src="js/content.js"></script>
+<script src="js/script.js"></script>
+</body>
+</html>
