@@ -1,0 +1,23 @@
+#themeBtn{display:inline-block;background:transparent;border:1px solid var(--gold);border-radius:999px;padding:5px 16px;color:var(--gold-2);font-size:17px;font-family:inherit}
+#themeBtn:hover{background:rgba(255,255,255,.08)}
+@media (max-width:640px){.top-r{gap:6px}#themeBtn,#musicBtn,#editBtn{padding:4px 12px;font-size:16px}}
+#chooser{position:fixed;inset:0;z-index:100;display:grid;place-items:center;padding:24px 18px;overflow:auto;color:#F3EBDD;
+  background-color:#0A0818;background-image:radial-gradient(1.4px 1.4px at 12% 18%,#fff,transparent),radial-gradient(1px 1px at 82% 12%,#fff,transparent),radial-gradient(1.2px 1.2px at 30% 82%,#fff,transparent),radial-gradient(1px 1px at 70% 76%,#fff,transparent),radial-gradient(1.4px 1.4px at 92% 56%,#fff,transparent),radial-gradient(1px 1px at 8% 58%,#fff,transparent),radial-gradient(ellipse at 50% 0,#2B2A55 0,#15122E 55%,#0A0818 100%);
+  transition:opacity .8s ease,visibility .8s}
+#chooser.gone{opacity:0;visibility:hidden;pointer-events:none}
+.ch-in{max-width:780px;width:100%;text-align:center;margin:auto}
+#chooser h1{font-family:'Pinyon Script','Snell Roundhand','Brush Script MT',cursive;font-weight:400;font-size:clamp(50px,10vw,84px);margin:0;line-height:1.05;color:#F6E7D3;text-shadow:0 0 30px rgba(220,200,255,.35)}
+.ch-sub{font-family:'Cormorant Garamond',Georgia,serif;font-style:italic;font-size:22px;color:#CBBFD6;margin:6px 0 30px}
+.ch-cards{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+.ch-card{font:inherit;display:grid;justify-items:center;gap:4px;padding:16px 14px 22px;border:1px solid rgba(255,255,255,.22);border-radius:22px;background:rgba(255,255,255,.05);color:inherit;cursor:pointer;transition:transform .25s,border-color .25s,background .25s}
+.ch-card:hover,.ch-card:focus-visible{transform:translateY(-6px);border-color:#E6D2A8;background:rgba(255,255,255,.1)}
+.ch-art{display:block;position:relative;width:100%;max-width:260px;aspect-ratio:1/1;border-radius:16px;overflow:hidden;margin-bottom:12px}
+.ch-night .ch-art{background:radial-gradient(ellipse at 50% 40%,#2E4A8A 0,#16295A 55%,#0B1533 100%)}
+.ch-rose .ch-art{background:radial-gradient(ellipse at 50% 40%,#8A2A52 0,#4A1229 55%,#240A15 100%)}
+.ch-art svg{position:absolute;inset:0;width:100%;height:100%}
+.ch-card b{font-family:'Cormorant Garamond',Georgia,serif;font-size:29px;font-weight:600}
+.ch-card i{font-family:'Cormorant Garamond',Georgia,serif;font-size:19px;color:#CBBFD6}
+#veil{position:fixed;inset:0;z-index:95;opacity:0;pointer-events:none;transition:opacity .55s ease}
+#veil.on{opacity:1;pointer-events:auto}
+@media (max-width:560px){.ch-cards{grid-template-columns:1fr;gap:16px}.ch-art{max-width:190px}}
+@media (prefers-reduced-motion:reduce){#chooser,#veil{transition:none}}
