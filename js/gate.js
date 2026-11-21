@@ -2,7 +2,7 @@
 // vault/. The answer to the question is the key: nothing can be read without it.
 // To rebuild the vault after editing the original files, see tools/encrypt.mjs.
 (function () {
-  var QUESTION = "What was the Roblox GC's name?";
+  var QUESTION = "What was the Roblox GC's name? (no caps)";
 
   var css =
     '#gate{position:fixed;inset:0;z-index:200;display:grid;place-items:center;padding:24px 18px;overflow:auto;color:#F3EBDD;' +
