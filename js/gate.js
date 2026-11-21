@@ -10,7 +10,7 @@
       'transition:opacity .8s ease,visibility .8s;font-family:"Cormorant Garamond",Georgia,serif}' +
     '#gate.gone{opacity:0;visibility:hidden;pointer-events:none}' +
     '#gate .g-in{max-width:560px;width:100%;text-align:center;margin:auto;animation:gfade .9s ease}' +
-    '#gate h1{font-family:"Pinyon Script","Snell Roundhand","Brush Script MT",cursive;font-weight:400;font-size:clamp(40px,8vw,64px);margin:0 0 26px;line-height:1.15;color:#F6E7D3;text-shadow:0 0 30px rgba(220,200,255,.35)}' +
+    '#gate h1{font-family:"Cormorant Garamond",Georgia,serif;font-style:italic;font-weight:500;font-size:clamp(32px,6vw,46px);margin:0 0 26px;line-height:1.2;color:#F6E7D3;text-shadow:0 0 30px rgba(220,200,255,.35)}' +
     '#gate .g-row{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-bottom:20px}' +
     '#gate input{font:inherit;font-size:22px;padding:10px 16px;border:1px solid rgba(255,255,255,.3);border-radius:14px;background:rgba(255,255,255,.06);color:#F3EBDD;width:100%;max-width:340px;text-align:center}' +
     '#gate input::placeholder{color:rgba(243,235,221,.45)}' +
